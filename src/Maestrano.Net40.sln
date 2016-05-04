@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maestrano.Net40", "Maestrano\Maestrano.Net40.csproj", "{3888E59D-F45B-405C-B8CD-039F0AF0B7CE}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FD1874
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MnoDemoApp", "..\..\demoapp-dotnet-master\MnoDemoApp\MnoDemoApp.csproj", "{B143D27E-4FDB-4972-86D8-4B63662C41C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,10 @@ Global
 		{05C58951-3A91-43D4-9169-1CE703F3023B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05C58951-3A91-43D4-9169-1CE703F3023B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{05C58951-3A91-43D4-9169-1CE703F3023B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B143D27E-4FDB-4972-86D8-4B63662C41C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B143D27E-4FDB-4972-86D8-4B63662C41C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B143D27E-4FDB-4972-86D8-4B63662C41C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B143D27E-4FDB-4972-86D8-4B63662C41C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -86,12 +86,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Maestrano\Maestrano.csproj">
-      <Project>{3888e59d-f45b-405c-b8cd-039f0af0b7ce}</Project>
-      <Name>Maestrano</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Support\Saml\Responses\response1.xml.base64" />
     <None Include="Support\Saml\Responses\response2.xml.base64" />
     <None Include="Support\Saml\Responses\response3.xml.base64" />
@@ -107,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Maestrano\Maestrano.Net40.csproj">
+      <Project>{3888e59d-f45b-405c-b8cd-039f0af0b7ce}</Project>
+      <Name>Maestrano.Net40</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

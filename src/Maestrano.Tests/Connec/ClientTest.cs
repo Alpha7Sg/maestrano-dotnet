@@ -35,6 +35,16 @@ namespace Maestrano.Tests.Connec
         }
 
         [Test]
+        public void Get_onCollection_itReturnsTheReport()
+        {
+            RestResponse resp = this.client.GetReport("/accounts_summary");
+            var parsed = JsonConvert.DeserializeObject<Dictionary<string, object>>(resp.Content);
+
+            Assert.IsNotNull(parsed["accounts"]);
+        }
+
+
+        [Test]
         public void Get_onCollection_withType_itReturnsTheDeserializedResponse()
         {
             RestResponse<Dictionary<string, string>> resp = this.client.Get<Dictionary<string, string>>("/organizations");

@@ -116,6 +116,32 @@ namespace Maestrano.Connec
             return request;
         }
 
+        public RestResponse GetReport(string path)
+        {
+            //override base url to get report
+            var myClient = InternalClient();
+            var connecBasePath = MnoHelper.With(presetName).Connec.BasePath;
+            var reportBasePath = MnoHelper.With(presetName).Connec.ReportBasePath;
+            var connecScopedPath = connecBasePath + "/" + groupId;
+
+            myClient.BaseUrl = String.Format("{0}{1}",
+                    MnoHelper.With(presetName).Connec.Host,
+                    reportBasePath + "/" + groupId
+                    );
+            // send request
+            var request = PrepareRequest(Method.GET, path, null, null);
+            var response = (RestResponse)myClient.Execute(request);
+
+            //reset correct url 
+            myClient.BaseUrl = String.Format("{0}{1}",
+                    MnoHelper.With(presetName).Connec.Host,
+                    connecScopedPath
+                    );
+
+            //return report 
+            return response;
+        }
+
         public RestResponse Get(string path)
         {
             return (RestResponse)InternalClient().Execute(PrepareRequest(Method.GET, path, null, null));

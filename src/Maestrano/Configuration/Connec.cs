@@ -11,8 +11,10 @@ namespace Maestrano.Configuration
     {
         private const string ProdDefaultApiHost = "https://api-connec.maestrano.com";
         private const string ProdDefaultBasePath = "/api/v2";
+        private const string ProdDefaultReportBasePath = "/api/reports";
         private const string TestDefaultApiHost = "http://api-sandbox.maestrano.io";
         private const string TestDefaultBasePath = "/connec/api/v2";
+        private const string TestDefaultReportBasePath = "/api/reports";
 
         private string presetName;
 
@@ -80,6 +82,32 @@ namespace Maestrano.Configuration
             }
 
             set { this["base-path"] = value; }
+        }
+
+        /// <summary>
+        /// Return the Connec! Report Base Path
+        /// </summary>
+        [ConfigurationProperty("report-base-path", DefaultValue = null, IsRequired = false)]
+        public string ReportBasePath
+        {
+            get
+            {
+                var _path = (String)this["report-base-path"];
+                if (string.IsNullOrEmpty(_path))
+                {
+                    if (MnoHelper.With(this.presetName).isProduction())
+                    {
+                        return ProdDefaultReportBasePath;
+                    }
+                    else
+                    {
+                        return TestDefaultReportBasePath;
+                    }
+                }
+                return _path;
+            }
+
+            set { this["report-base-path"] = value; }
         }
     }
 }
